@@ -36,7 +36,6 @@ export default async function Onboarding() {
         return sendTelegramMessage(to, text)
     }
     return (
-        // center stuff vertically and horizontally
         <div className="flex flex-col items-center justify-center mt-20 gap-5">
 
             <WhatsappConnect session={session} subscription={subscription || undefined} userDetails={userDetails || undefined}
@@ -55,7 +54,6 @@ export default async function Onboarding() {
                 sendTelegramMessage={sendTelegramMessageServer}
                 className='shadow-none'
             />
-
         </div>
     )
 }
