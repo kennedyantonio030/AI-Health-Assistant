@@ -11,7 +11,6 @@ import { getHealthData } from "@/lib/get-data";
 import { getDefaultMessage } from "@/lib/messages";
 
 
-// export const runtime = 'edge'
 export const maxDuration = 300
 
 async function getOriginalMessage(messages: Message[], answer: string): Promise<string> {
@@ -89,7 +88,6 @@ export async function POST(req: Request) {
   try {
     console.log(parsed);
     const phoneNumber = parsed.From.replace('whatsapp:', '')
-    // get userId
     const { data, error } = await supabase.from('users').select().eq('phone', phoneNumber).limit(1);
     if (error || !data || data.length === 0) {
       console.log(error, data)
@@ -117,7 +115,6 @@ export async function POST(req: Request) {
     if (hasImage) {
       // Check if the user has more than two tags or questions and is not on the standard plan
       if (tagCount > 2 && user.plan !== 'standard') {
-        // Send a message to the user asking them to upgrade their plan
         const upgradeMessage = "You have reached the limit for your current plan. Please upgrade to the standard plan to continue using our service. https://buy.stripe.com/28oeVDdGu4RA2JOfZ2";
         await sendWhatsAppMessage(phoneNumber, upgradeMessage);
         return new Response('');

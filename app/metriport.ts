@@ -62,6 +62,7 @@ export async function syncHealthData(activities: Activity[], biometrics: Biometr
                 error: metadata.error
             }, { onConflict: 'start_time, end_time, user_id, source' })
         if (error) {
+            
             console.error('Error inserting sleep:', error)
         }
     }
