@@ -28,33 +28,9 @@ export default async function Home() {
                 Get started - free
               </a>
             </div>
-            {/*<div className="relative inline-flex rounded-md shadow">
-              <a href="https://buy.stripe.com/4gw7tb31Q6ZIckoaEE" className="flex-col items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-gray-100 bg-indigo-600 hover:bg-indigo-500">
-                Support Mediar
-              </a>
-              <div className="absolute top-0 right-0 mt-1 mr-1">
-                <HoverCard>
-                  <HoverCardTrigger>
-                    <QuestionMarkCircleIcon width={20} className="text-gray-100 hover:cursor-pointer" />
-                  </HoverCardTrigger>
-                  <HoverCardContent className="w-300 h-150">
-                    <CatalystCard />
-                  </HoverCardContent>
-                </HoverCard>
-              </div>
-            </div>*/}
           </div>
 
           <div className="h-[600px] w-full relative">
-            {/* <HeroVideo
-
-            // className={cn(
-            //   "absolute inset-[1px] flex overflow-hidden rounded-2xl",
-            //   className,
-            // )}
-            // override absolute and display below
-            // className="absolute inset-[1px] flex overflow-hidden rounded-2xl"
-            /> */}
 
             <MagicContainer>
               <MagicCard className="[mask:linear-gradient(0deg,transparent_0%,#fff_100%)]">
@@ -69,8 +45,6 @@ export default async function Home() {
 
 
           <iframe src="https://link.excalidraw.com/p/readonly/HPHqJw8yfgFU0lEHDblD" width="100%" height="800px"></iframe>
-
-          {/* <iframe src="https://link.excalidraw.com/p/readonly/x2iA4KZYDy8hdse5ltLu" width="100%" height="800px"></iframe> */}
         </div>
 
       </div>
