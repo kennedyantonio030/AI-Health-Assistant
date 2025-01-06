@@ -1,17 +1,10 @@
-import { Database } from '@/types_db';
-import { createClient } from '@supabase/supabase-js';
 import { NextResponse } from 'next/server';
 import { MetriportDevicesApi } from "@metriport/api-sdk";
 import { syncHealthData } from '@/app/metriport';
 
 // export const runtime = 'edge'
-export const maxDuration = 300
+export const maxDuration = 200
 
-// curl -X POST -d '{"metriportUserId": "0fa0ce80-1e29-44cf-b957-6f5c58ca33e9", "userId":"20284713-5cd6-4199-8313-0d883f0711a1","timezone":"America/Los_Angeles","fullName":"Louis","telegramChatId":"5776185278", "phone": "+...", "goal": "I want to improve my mood by practicing mindfulness and meditation."}' -H "Content-Type: application/json" http://localhost:3000/api/single-metriport
-
-// this function should:
-// 1. fetch the data from metriport api for the user for all providers
-// 2. insert the data into supabase for the user
 
 export async function POST(req: Request) {
   const { userId, timezone, metriportUserId } = await req.json()
