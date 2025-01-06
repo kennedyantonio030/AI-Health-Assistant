@@ -84,14 +84,3 @@ export const opticalCharacterRecognition = async (base64Image: string) => {
   return result?.responses?.[0]?.fullTextAnnotation?.text || ''
 }
 
-// import fs from 'fs';
-
-// Read the file into a Buffer
-// const buffer = fs.readFileSync('/Users/louisbeaumont/Downloads/IMG_2189.jpg');
-// const buffer = fs.readFileSync('/Users/louisbeaumont/Downloads/afcad06f-7ef8-456d-bca5-543a6cf070e4.jpeg');
-
-// Convert the Buffer to a base64 string
-// const base64Image = buffer.toString('base64');
-
-// Now you can pass the base64 string to your opticalCharacterRecognition function
-// opticalCharacterRecognition(base64Image);

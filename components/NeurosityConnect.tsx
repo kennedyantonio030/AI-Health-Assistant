@@ -50,18 +50,15 @@ export default function NeurosityConnect({ session, className, onboarding }: Pro
                     href="https://neurosity.co">Neurosity</Link> to record your mind.</p>
             </div>
 
-            {/* Form */}
             <div className="space-y-4 flex flex-col items-center">
                 {
                     customToken &&
-                    // display green dot and text
                     <div className='flex items-center space-x-2 text-center justify-center'>
                         <div className="w-3 h-3 bg-green-500 rounded-full animate-ping">
                         </div>
                         <span className="text-sm text-gray-400">Connected to Neurosity</span>
                     </div>
                 }
-                {/* Connect button */}
                 <Button
                     className=" text-white  w-[80%] lg:w-[50%] mx-auto "
                     onClick={handleConnect}

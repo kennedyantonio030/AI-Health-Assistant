@@ -41,7 +41,6 @@ def compute_pca(data):
 
 # Updated Functions
 def select_columns(data):
-    # Select specific columns when transforming data to DataFrame
     formatted_data = []
     for item in data:
         flattened_item = {
@@ -58,7 +57,6 @@ def select_columns(data):
 
 
 def average_over_time(df, seconds):
-    # Convert the timestamp column to datetime
     df["timestamp"] = pd.to_datetime(df["timestamp"], unit="ms")
     df["timestamp"] = (
         df["timestamp"].dt.tz_localize("UTC").dt.tz_convert("America/Los_Angeles")
