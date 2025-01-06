@@ -7,17 +7,14 @@ import { Database } from '@/types_db';
 
 export async function POST(req: Request) {
   if (req.method === 'POST') {
-    // 1. Destructure the price and quantity from the POST body
     const { price, quantity = 1, metadata = {} } = await req.json();
 
     try {
-      // 2. Get the user from Supabase auth
       const supabase = createRouteHandlerClient<Database>({cookies});
       const {
         data: { user }
       } = await supabase.auth.getUser();
 
-      // 3. Retrieve or create the customer in Stripe
       const customer = await createOrRetrieveCustomer({
         uuid: user?.id || '',
         email: user?.email || ''

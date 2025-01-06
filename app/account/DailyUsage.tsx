@@ -1,7 +1,5 @@
 'use client'
 import { Button } from '@/components/ui/button';
-import { postData } from '@/utils/helpers';
-import { getStripe } from '@/utils/stripe-client';
 import { Loader2 } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { useState, useEffect } from 'react';
@@ -15,7 +13,6 @@ export default function DailyUsage({ kvGet, userId, limit, price }: { kvGet: any
     useEffect(() => {
         setIsLoading(true);
         const fetchData = async () => {
-            // local date
             const date = new Date().toLocaleDateString('en-US', {
                 timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone,
             });
@@ -37,27 +34,16 @@ export default function DailyUsage({ kvGet, userId, limit, price }: { kvGet: any
     }, [userId]);
 
     const onBiohacker = async () => {
-
-        // const { sessionId } = await postData({
-        //     url: '/api/create-checkout-session',
-        //     data: { price: price },
-        // });
-
-        // const stripe = await getStripe();
-        // stripe?.redirectToCheckout({ sessionId });
         const url = 'https://buy.stripe.com/28oeVDdGu4RA2JOfZ2'
         router.push(url);
     }
 
     const onAthlete = async () => {
-        // https://cal.com/louis030195/athlete
-        // const url = 'https://cal.com/louis030195/athlete';
         const url = 'https://buy.stripe.com/28oeVDdGu4RA2JOfZ2'
         router.push(url);
     }
 
     return (
-        // border
         <div
             // min size
             className="p-4 flex gap-4 flex-col items-center justify-center border-1 border-gray-200 rounded-md min-w-[300px] min-h-[200px] shadow-md">

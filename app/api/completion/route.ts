@@ -1,10 +1,9 @@
 import { AnthropicStream, StreamingTextResponse } from 'ai'
 
-// IMPORTANT! Set the runtime to edge
+
 export const runtime = 'edge'
 
 export async function POST(req: Request) {
-  // Extract the `prompt` from the body of the request
   const { prompt } = await req.json()
 
   const response = await fetch('https://api.anthropic.com/v1/complete', {
