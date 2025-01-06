@@ -46,9 +46,7 @@ export async function POST(req: Request) {
     const usersToday = new Date().toLocaleString('en-US', { timeZone: user.timezone })
     const threeDaysAgo = new Date(new Date().setDate(new Date().getDate() - 3)).toLocaleString('en-US', { timeZone: user.timezone });
 
-    // const yesterday = new Date(new Date().setDate(new Date().getDate() - 1)).toLocaleString('en-US', { timeZone: user.timezone })
     console.log("Yesterday's date for user:", threeDaysAgo);
-    // const yesterdayFromOneAm = new Date(new Date(yesterday).setHours(1, 0, 0, 0)).toLocaleString('en-US', { timeZone: user.timezone })
     const threeDaysAgoFromOneAm = new Date(new Date(threeDaysAgo).setHours(1, 0, 0, 0)).toLocaleString('en-US', { timeZone: user.timezone });
 
     // check if there is already an insight at the today timezone of the user
@@ -89,7 +87,6 @@ ${healthData}`, anonymisousUser));
 
     if (phone) {
       console.log("Sending whatsapp message to user:", user);
-      // 1. check when was the last whatsapp message with this user
 
       const { data: lastWhatsappMessage, error: e4 } = await supabase
         .from('chats')
