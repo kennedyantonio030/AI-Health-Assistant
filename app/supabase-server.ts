@@ -124,7 +124,6 @@ export const saveOnboarding = async (userId: string) => {
   const { data, error } = await supabase
     .from('onboardings')
     .upsert({
-      // updated_at: new Date().toString(),
       user_id: userId,
     })
 
@@ -164,7 +163,6 @@ export const getTags = async (userId: string) => {
     .from('tags')
     .select('text, created_at')
     .eq('user_id', userId)
-    // only five last days
     .gt('created_at', new Date(Date.now() - 3 * 24 * 60 * 60 * 1000).toISOString())
 
   if (error) {

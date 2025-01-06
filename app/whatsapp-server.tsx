@@ -31,7 +31,6 @@ export const sendWhatsAppMessage = async (to: string, body: string, retryCount =
     }
 
     const data = await response.json()
-    console.log("WhatsApp message sent successfully", data);
 
     return response;
 }
@@ -195,6 +194,4 @@ export const listWhatsAppMessagesFromNumber = async (toNumber: string): Promise<
     const data = await response.json() as ListMessagesResponse;
     return data.messages as Message[];
 }
-// listWhatsAppMessagesFromNumber("+...").then(console.log).catch(console.error);
-
 
