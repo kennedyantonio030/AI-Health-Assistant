@@ -3,7 +3,7 @@ interface MessageOptions {
   caption?: string
 }
 type MessageType = 'tagMessage' | 'imageTagMessage' | 'feedbackMessage' | 'defaultUnclassifiedMessage' | 'processingImage' | 'processingQuestion';
-type Language = 'English' | 'Spanish' | 'French' | 'German' | 'Mandarin Chinese' | 'Hindi' | 'Russian' | 'Japanese' | 'Korean' | 'Vietnamese' | 'Italian';
+type Language = 'English' | 'Spanish' | 'French' | 'German' | 'Mandarin Chinese' | 'Hindi' | 'Russian' | 'Japanese' | 'Vietnamese' | 'Italian';
 export function getDefaultMessage(messageType: MessageType, language: Language | string, options?: MessageOptions): string {
   const quotes: any = {
     'English': [
