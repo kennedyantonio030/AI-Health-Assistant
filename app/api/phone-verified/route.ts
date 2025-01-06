@@ -47,6 +47,15 @@ export async function POST(req: Request) {
 
 }
 
+// curl -X POST http://localhost:3000/api/phone-verified
+
+// // sendWhatsAppMessage('+xxx', welcomeMessage('xx')).then(console.log).catch(console.error)
+
+// const supabase = createClient<Database>(
+//     process.env.SUPABASE_URL!,
+//     process.env.SUPABASE_KEY!
+//   )
+
 
 async function sendMessagesAndUpdateUsers() {
     const supabase = createClient<Database>(
@@ -95,4 +104,5 @@ Hit me up if you face any other issues or have any feedback ❤️. Wishing you 
     }
 }
 
+// sendMessagesAndUpdateUsers().then(console.log).catch(console.error)
 
