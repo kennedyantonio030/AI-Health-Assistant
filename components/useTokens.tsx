@@ -30,16 +30,7 @@ export function useNeurosityToken(userId: string) {
         return userPromise
     }
 
-    useEffect(() => {
-        // supabase
-        //     .channel('postgresChangesChannel')
-        //     .on('postgres_changes', {
-        //         event: '*',
-        //         schema: 'public',
-        //         table: 'tokens',
-        //     },
-        //         (payload) => {
-        //    
+    useEffect(() => {  
         const tk = params.get("access_token")
         if (tk) {
             setAccessToken(tk)

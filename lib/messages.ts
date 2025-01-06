@@ -79,15 +79,6 @@ export function getDefaultMessage(messageType: MessageType, language: Language |
       "🙌 身体と心は信じたことを達成します。自分と健康目標を信じましょう!"
     ],
 
-    'Korean': [
-      "✨ 작은 일상의 개선이 시간이 지나면서 큰 결과로 이어집니다. 미디어에서 건강 데이터 기록을 계속하세요!",
-      "💫 천 리 길도 한 걸음부터 시작합니다. 오늘부터 웰빙 최적화를 시작하세요!",
-      "🌼 건강 데이터는 소중하고 독특합니다. 미디어가 패턴을 이해하는 데 도움이 될 것입니다.",
-      "💯 진보에는 인내가 필요합니다. 건강 추적을 계속하세요. 꼭 성공할 수 있습니다!",
-      "🤝 미디어는 최고의 자신을 풀어내는 데 도움이 되고자 합니다. 함께 노력하겠습니다!",
-      "🌻 웰빙을 위해서는 노력이 필요하지만 가치가 있습니다. 건강을 향해 나아가세요!",
-      "🙌 신체와 마음은 믿는 것을 이룹니다. 자신과 건강 목표를 믿으세요!"
-    ],
     'Vietnamese': [
       "✨ Những cải thiện nhỏ mỗi ngày sẽ dẫn đến những kết quả lớn theo thời gian. Hãy tiếp tục ghi lại dữ liệu sức khỏe của bạn với Mediar!",
       "💫 Hành trình ngàn dặm bắt đầu bằng một bước chân. Hãy bắt đầu tối ưu hóa sức khỏe của bạn ngay hôm nay!",
@@ -135,9 +126,6 @@ export function getDefaultMessage(messageType: MessageType, language: Language |
       'Japanese': `了解しました!タグを記録しました。タグを送信し続けてください。あなたの理解のために役立ちます。
                   ウェアラブルデータも読むことができます。Mediar iOSアプリのインストールを確認してください。マインドとボディの洞察を提供できます。
                   ${randomQuote}`,
-      'Korean': `알겠습니다! 당신의 태그를 기록했습니다. 계속 태그를 보내주세요. 이것이 당신을 더 잘 이해하는 데 도움이 될 것입니다.
-                  웨어러블 데이터도 읽을 수 있습니다. Mediar iOS 앱 설치를 확인하세요. 마음과 몸에 대한 통찰력을 드릴 수 있습니다.
-                  ${randomQuote}`,
       'Vietnamese': `Đã hiểu! Tôi đã ghi lại thẻ của bạn. Hãy tiếp tục gửi cho tôi nhiều thẻ hơn nữa, điều này sẽ giúp tôi hiểu bạn tốt hơn.
                   Tôi cũng có thể đọc dữ liệu đeo của bạn, hãy đảm bảo cài đặt ứng dụng Mediar cho iOS, tôi có thể mang lại cho bạn những hiểu biết sâu sắc hơn về tâm trí và cơ thể của bạn.
                   ${randomQuote}`,
@@ -171,9 +159,6 @@ export function getDefaultMessage(messageType: MessageType, language: Language |
       'Japanese': `画像に「${options?.caption || ''}」が表示されています。タグを記録し、健康データと関連付けました。
                   画像をさらに送信ください。理解するよう努力します!フィードバックは歓迎です❤️!
                   ${randomQuote}`,
-      'Korean': `이미지에 "${options?.caption || ''}"가 표시됩니다. 태그를 기록하고 건강 데이터와 연관시켰습니다.
-                  더 많은 이미지를 보내주세요. 이해하려 노력할 것입니다! 모든 피드백 환영합니다❤️!
-                  ${randomQuote}`,
       'Vietnamese': `Tôi thấy trong hình ảnh của bạn "${options?.caption || ''}". Tôi đã ghi lại thẻ đó cho bạn và liên kết nó với dữ liệu sức khỏe của bạn.
                   Hãy thoải mái gửi cho tôi nhiều hình ảnh hơn nữa và tôi sẽ cố gắng hiểu chúng! Mọi phản hồi đều được đánh giá cao ❤️!
                   ${randomQuote}`,
@@ -198,8 +183,6 @@ export function getDefaultMessage(messageType: MessageType, language: Language |
       'Russian': `Спасибо за ваш отзыв! Мы ценим ваше мнение и используем его для улучшения нашего сервиса. Не стесняйтесь присылать нам больше отзывов в любое время!
                   ${randomQuote}`,
       'Japanese': `フィードバックありがとうございます!ご意見いただきありがとうございます。サービス改善に利用します。随時フィードバックをお寄せください!
-                  ${randomQuote}`,
-      'Korean': `피드백 주셔서 감사합니다! 의견 주셔서 감사드립니다. 서비스 개선에 사용하겠습니다. 언제든지 피드백 보내주세요!
                   ${randomQuote}`,
       'Vietnamese': `Cảm ơn phản hồi của bạn! Chúng tôi đánh giá cao ý kiến đóng góp của bạn và sẽ sử dụng nó để cải thiện dịch vụ của mình. Hãy thoải mái gửi cho chúng tôi thêm phản hồi bất cứ lúc nào!
                   ${randomQuote}`,
@@ -239,10 +222,6 @@ export function getDefaultMessage(messageType: MessageType, language: Language |
                    「リンゴを食べました」、「妻とケンカしました」、「悲しい」、「今日はエネルギーがない...」などのメッセージを送信できます。
                    これにより、身体の動きを理解し、洞察を提供できるようになります。「生産性を上げるには?」「睡眠の改善法は?」などの質問にも答えられます。
                    ${randomQuote}`,
-      'Korean': `죄송합니다. 질문을 하지 않았고 인생의 사건에 태그를 달지 않은 것 같습니다. 현재 제 유일한 목적은 귀하의 삶에서 발생하는 일과 귀하의 웨어러블 기기에서 수집한 건강 데이터를 연관시키는 것입니다.
-                   "사과를 먹었다"고 하거나 "아내와 싸웠다"고 하거나 "슬퍼요"라고 하거나 "오늘은 에너지가 매우 낮다..."고 말씀해주세요.
-                   이를 통해 귀하의 신체 작동 원리를 더 잘 이해하고 통찰력을 제공할 수 있습니다. 또한 "생산성을 높이는 방법은 무엇입니까?" 또는 "수면 개선 방법은 무엇입니까?"와 같은 질문에 답변할 수 있습니다.
-                   ${randomQuote}`,
       'Vietnamese': `Rất tiếc, có vẻ như bạn đã không hỏi câu hỏi nào và cũng không gắn thẻ các sự kiện trong cuộc sống. Mục đích duy nhất của tôi lúc này là liên kết các thẻ liên quan đến những gì đang xảy ra trong cuộc sống của bạn với dữ liệu sức khỏe từ thiết bị đeo của bạn.
                    Bạn có thể gửi tin nhắn cho tôi như "vừa ăn một quả táo", hoặc "vừa cãi nhau với vợ tôi", hoặc "tôi buồn quá", hoặc "hôm nay mệt mỏi quá...".
                    Như vậy tôi sẽ hiểu rõ hơn cơ thể của bạn hoạt động như thế nào, và cung cấp cho bạn những hiểu biết sâu sắc hơn về nó. Tôi cũng có thể trả lời các câu hỏi như "làm thế nào để tôi trở nên năng suất hơn?" hoặc "làm thế nào để tôi cải thiện giấc ngủ?".
@@ -261,7 +240,6 @@ export function getDefaultMessage(messageType: MessageType, language: Language |
       'Hindi': "ज़रूर, मुझे आपकी तस्वीर समझने के लिए कुछ सेकंड दीजिए 🙏।",
       'Russian': "Конечно, дайте мне пару секунд, чтобы понять ваше изображение 🙏.",
       'Japanese': "はい、あなたの画像を理解するのに数秒かかります🙏。",
-      'Korean': "당연하죠, 제 이미지를 이해하는 데 몇 초가 걸릴 것입니다 🙏.",
       'Vietnamese': "Được rồi, cho tôi vài giây để hiểu hình ảnh của bạn 🙏.",
       'Italian': "Certo, dammi qualche secondo per capire la tua immagine 🙏.",
     },
@@ -275,7 +253,6 @@ export function getDefaultMessage(messageType: MessageType, language: Language |
       'Hindi': "ज़रूर, मुझे आपका डेटा पढ़ने के लिए कुछ सेकंड दीजिए, मैं एक मिनट से भी कम समय में आपको जवाब दे दूंगा🙏। बस: कोई भी प्रतिक्रिया स्वागत है❤️",
       'Russian': "Конечно, дайте мне пару секунд, чтобы прочитать ваши данные, и я вернусь к вам с ответом менее чем за минуту 🙏. ПС: Любая обратная связь приветствуется ❤️",
       'Japanese': "はい、あなたのデータを読むのに数秒かかります。1分以内に回答します🙏。追伸:フィードバックは歓迎です❤️",
-      'Korean': "물론이죠, 제가 데이터를 읽는 데 몇 초가 걸릴 것이고 1분 이내로 답변 드리겠습니다🙏. PS: 모든 피드백 환영합니다❤️",
       'Vietnamese': "Được rồi, cho tôi vài giây để đọc dữ liệu của bạn và tôi sẽ trả lời bạn trong vòng một phút 🙏. PS: Mọi phản hồi đều được đánh giá cao ❤️",
       'Italian': "Certo, dammi qualche secondo per leggere i tuoi dati e ti risponderò in meno di un minuto 🙏. PS: Ogni feedback è apprezzato ❤️",
     }
