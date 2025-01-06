@@ -2,6 +2,7 @@ import { Database } from "@/types_db";
 import { createClient } from "@supabase/supabase-js";
 
 
+
 export async function getHealthData(user: any, threeDaysAgoFromOneAm: string) {
   const supabase = createClient<Database>(
     process.env.SUPABASE_URL!,
@@ -45,32 +46,32 @@ export async function getHealthData(user: any, threeDaysAgoFromOneAm: string) {
       .gte('created_at', threeDaysAgoFromOneAm)
   ])
 
-
+//@ts-ignore
   const activitiesData = activities.data?.map(activity => ({
     ...activity,
     start_time: activity.start_time ? convertToUserTimezone(new Date(activity.start_time), user.timezone) : null,
   }));
-
+//@ts-ignore
   const biometricsData = biometrics.data?.map(biometric => ({
     ...biometric,
     start_time: biometric.start_time ? convertToUserTimezone(new Date(biometric.start_time), user.timezone) : null,
   }));
-
+//@ts-ignore
   const bodyData = body.data?.map(body => ({
     ...body,
     start_time: body.start_time ? convertToUserTimezone(new Date(body.start_time), user.timezone) : null,
   }));
-
+//@ts-ignore
   const foodsData = foods.data?.map(food => ({
     ...food,
     start_time: food.start_time ? convertToUserTimezone(new Date(food.start_time), user.timezone) : null,
   }));
-
+  //@ts-ignore
   const sleepData = sleep.data?.map(sleep => ({
     ...sleep,
     start_time: sleep.start_time ? convertToUserTimezone(new Date(sleep.start_time), user.timezone) : null,
   }));
-
+  //@ts-ignore
   const tagsData = tags.data?.map(tag => ({
     ...tag,
     created_at: tag.created_at ? convertToUserTimezone(new Date(tag.created_at), user.timezone) : null,
@@ -84,7 +85,6 @@ export async function getHealthData(user: any, threeDaysAgoFromOneAm: string) {
     sleep: sleepData,
     tags: tagsData,
   });
-
 }
 
 export function convertToUserTimezone(date: Date, userTimezone: string) {
