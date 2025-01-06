@@ -10,11 +10,9 @@ import { getHealthData } from "@/lib/get-data";
 import { getDefaultMessage } from "@/lib/messages";
 
 // export const runtime = 'edge'
-export const maxDuration = 300
+export const maxDuration = 200
 
 
-
-// Define the type for the incoming request
 interface IncomingRequest {
   update_id: number;
   my_chat_member: {
@@ -127,7 +125,7 @@ If you want to know more about your health, just ask me questions like:
 - How can I reduce my stress?
 - What's my focus score?
 
-If you have any feedback or questions ❓ about Mediar, just join the Discord community or email 💌 louis@mediar.ai.
+If you have any feedback or questions ❓ about Mediar, just join the Discord community or email 💌 kennedyantonio030@gmail.com.
 
 Your health matter ❤️🥦💪🧠`
 
@@ -136,29 +134,18 @@ export async function POST(req: Request) {
   const token = process.env.TELEGRAM_BOT_TOKEN!;
 
   const bot = new TelegramBot(token);
-  // await bot.sendChatAction(body.message.chat.id, "typing");
   console.log("Incoming request:", body);
 
   try {
-
-    // return if group 
-
     if (body.my_chat_member) {
       console.log("Message from group, ignoring");
       return new Response('', { status: 200 });
     }
 
-
-
-    // return in no message 
-
     if (!body.message) {
       console.log("No message, ignoring");
       return new Response('', { status: 200 });
     }
-
-
-    // return if bot 
 
     if (body.message.from.is_bot) {
       console.log("Message from bot, ignoring");
@@ -169,8 +156,6 @@ export async function POST(req: Request) {
       process.env.SUPABASE_URL!,
       process.env.SUPABASE_KEY!
     )
-
-    // 1. find username in users table
     const { data, error } = await supabase
       .from('users')
       .select('id, phone, timezone, full_name, telegram_chat_id, plan, language')
