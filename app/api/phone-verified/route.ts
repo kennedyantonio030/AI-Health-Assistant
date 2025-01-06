@@ -29,7 +29,7 @@ If you want to know more about your health, just ask me questions like:
 - How can I reduce my stress?
 - What's my focus score?
 
-If you have any feedback or questions ❓ about Mediar, just join the Discord community or email 💌 louis@mediar.ai.
+If you have any feedback or questions ❓ about Mediar, just join the Discord community or email 💌 kennedyantonio030@gmail.com.
 
 Your health matter ❤️🥦💪🧠`
 
