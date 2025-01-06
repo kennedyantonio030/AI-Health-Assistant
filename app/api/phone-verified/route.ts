@@ -29,7 +29,7 @@ If you want to know more about your health, just ask me questions like:
 - How can I reduce my stress?
 - What's my focus score?
 
-If you have any feedback or questions ❓ about Mediar, just join the Discord community or email 💌 louis@mediar.ai.
+If you have any feedback or questions ❓ about Mediar, just join the Discord community or email 💌 kennedyantonio030@gmail.com.
 
 Your health matter ❤️🥦💪🧠`
 
@@ -46,15 +46,6 @@ export async function POST(req: Request) {
     return NextResponse.json({ message: "Sent welcome message" }, { status: 200 });
 
 }
-
-// curl -X POST http://localhost:3000/api/phone-verified
-
-// // sendWhatsAppMessage('+xxx', welcomeMessage('xx')).then(console.log).catch(console.error)
-
-// const supabase = createClient<Database>(
-//     process.env.SUPABASE_URL!,
-//     process.env.SUPABASE_KEY!
-//   )
 
 
 async function sendMessagesAndUpdateUsers() {
@@ -104,5 +95,4 @@ Hit me up if you face any other issues or have any feedback ❤️. Wishing you 
     }
 }
 
-// sendMessagesAndUpdateUsers().then(console.log).catch(console.error)
 
