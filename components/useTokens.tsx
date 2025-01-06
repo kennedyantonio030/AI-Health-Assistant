@@ -15,6 +15,7 @@ export function useNeurosityToken(userId: string) {
 
     const waitForUser = async () => {
         return new Promise<string>((resolve, reject) => {
+            //@ts-ignore
             const u = neurosity.onAuthStateChanged().subscribe((user) => {
                 if (user) {
                     u.unsubscribe()
@@ -47,6 +48,7 @@ export function useNeurosityToken(userId: string) {
             supabase.from('tokens').select()
                 .eq('mediar_user_id', userId)
                 .eq('provider', 'neurosity')
+                //@ts-ignore
                 .then(({ data, error: e }) => {
                     if (data?.length) {
                         setAccessToken(data[0].token)
@@ -68,11 +70,12 @@ export function useOuraToken(userId: string) {
     const [error, setError] = useState<string | null>(null)
     const [status, setStatus] = useState<boolean | null>(null)
 
-
+    
     useEffect(() => {
         supabase.from('tokens').select()
             .eq('mediar_user_id', userId)
             .eq('provider', 'oura')
+            //@ts-ignore
             .then(({ data, error: e }) => {
                 if (data?.length) {
                     setAccessToken(data[0].token)

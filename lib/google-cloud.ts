@@ -8,6 +8,7 @@ const getIdToken = async () => {
   // @ts-ignore
   client.scopes = ["https://www.googleapis.com/auth/cloud-platform"];
   // @ts-ignore
+  
   const idToken = await client.authorize();
   return idToken.access_token;
 };
