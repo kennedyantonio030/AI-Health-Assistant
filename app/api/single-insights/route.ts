@@ -1,19 +1,15 @@
 import { sendWhatsAppMessage } from '@/app/whatsapp-server';
-import { anonymiseUser, baseMediarAI, buildInsightCleanerPrompt, buildInsightPrompt, generalMediarAIInstructions, generateGoalPrompt } from '@/lib/utils';
+import { anonymiseUser, buildInsightPrompt, generalMediarAIInstructions, generateGoalPrompt } from '@/lib/utils';
 import { Database } from '@/types_db';
 import { createClient } from '@supabase/supabase-js';
-import { cookies } from 'next/headers';
 import { NextResponse } from 'next/server';
 import { llm, llmPrivate } from '@/utils/llm';
 import TelegramBot from 'node-telegram-bot-api';
-import PostHogClient from '@/app/posthog-server';
 import { getHealthData } from '@/lib/get-data';
 
 // export const runtime = 'edge'
 export const maxDuration = 300
 
-
-// curl -X POST -d '{"userId":"20284713-5cd6-4199-8313-0d883f0711a1","timezone":"America/Los_Angeles","fullName":"Louis","telegramChatId":"5776185278", "phone": "+...", "goal": "I want to improve my mood by practicing mindfulness and meditation."}' -H "Content-Type: application/json" http://localhost:3000/api/single-insights
 
 
 export async function POST(req: Request) {

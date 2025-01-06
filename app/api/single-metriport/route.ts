@@ -14,8 +14,7 @@ export async function POST(req: Request) {
       sandbox: false, // set to true to use the sandbox environment
     });
 
-    // use user timezone
-    // Error: Error: date must be in format YYYY-MM-DD!
+
     const usersDate = new Date(new Date().toLocaleDateString('en-US', { timeZone: timezone })).toISOString().split('T')[0];
     console.log('User date:', usersDate, timezone);
 
