@@ -19,8 +19,11 @@ export async function POST(req: Request) {
       stream: true
     })
   })
+
+  // Convert the response into a friendly text-stream
   const stream = AnthropicStream(response)
 
+  // Respond with the stream
   return new StreamingTextResponse(stream)
 }
 
