@@ -1,7 +1,6 @@
 'use client'
 import { useEffect, useState } from 'react';
 import Plot from 'react-plotly.js';
-import { Neurosity } from '@neurosity/sdk';
 import { Session } from '@supabase/auth-helpers-nextjs';
 import { ArrowPathIcon } from '@heroicons/react/20/solid';
 import { GetProcessedBrainwavesOptions } from '../supabase-server';
@@ -19,7 +18,7 @@ export const NeurosityBrainwaveChart = ({ session, getBrainwaves, getTags }: Pro
     let [states, setStates] = useState<any[]>([]);
     const [tags, setTags] = useState<any[]>([]);
 
-    states = states.map(state => {
+    states = states.map((state: { created_at: string | number | Date; }) => {
         const date = new Date(state.created_at);
         return {
             ...state,

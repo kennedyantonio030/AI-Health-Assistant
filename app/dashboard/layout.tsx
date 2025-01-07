@@ -1,7 +1,4 @@
 
-import Footer from '@/components/ui/Footer';
-import Navbar from '@/components/ui/Navbar';
-import { ScrollArea } from '@/components/ui/scroll-area';
 import { PropsWithChildren } from 'react';
 import 'styles/main.css';
 

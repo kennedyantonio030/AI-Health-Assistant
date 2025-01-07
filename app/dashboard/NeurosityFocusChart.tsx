@@ -1,7 +1,6 @@
 'use client'
 import React, { useEffect, useState } from 'react';
 import Plot from 'react-plotly.js';
-import { Neurosity } from '@neurosity/sdk';
 import { Session } from '@supabase/auth-helpers-nextjs';
 import { ArrowPathIcon } from '@heroicons/react/20/solid';
 import { Button } from '@/components/ui/button';
@@ -20,7 +19,7 @@ export const NeurosityFocusChart = ({ session, getStates, getTags }: Props) => {
     const [tags, setTags] = useState<any[]>([]);
 
     // This line transforms each avg_score in states to be between 0 and 100
-    states = states.map(state => {
+    states = states.map((state: { avg_score: number; }) => {
         return {
             ...state,
             avg_score: (state.avg_score + 1) / 2 * 100, // Transformation added here
@@ -57,8 +56,8 @@ export const NeurosityFocusChart = ({ session, getStates, getTags }: Props) => {
     }
     // Create the "Focus" data series
     const focusData = {
-        x: states.map(state => state.start_ts),
-        y: states.map(state => state.avg_score), // avg_score is now between 0 and 100
+        x: states.map((state: { start_ts: any; }) => state.start_ts),
+        y: states.map((state: { avg_score: any; }) => state.avg_score), // avg_score is now between 0 and 100
         type: 'scatter',
         mode: 'markers',
         marker: { color: '#8884d8' },
@@ -71,7 +70,7 @@ export const NeurosityFocusChart = ({ session, getStates, getTags }: Props) => {
     let annotations: any[] = [];
     if (tags.length > 0) {
         tagsData = {
-            x: tags.map((tag) => {
+            x: tags.map((tag: { created_at: string | number | Date; }) => {
                 const date = new Date(tag.created_at);
                 const offset = date.getTimezoneOffset();
                 const localDate = new Date(date.getTime() - offset * 60 * 1000);
@@ -92,10 +91,10 @@ export const NeurosityFocusChart = ({ session, getStates, getTags }: Props) => {
                 size: 5
             },
             hovertemplate: '%{text}<br>%{x}', // Show the tag text when hovering over the marker
-            text: tags.map(tag => tag.text),
+            text: tags.map((tag: { text: any; }) => tag.text),
             name: 'Tags' // This name will appear in the legend
         };
-        annotations = tags.map((tag, index) => {
+        annotations = tags.map((tag: { created_at: any; text: any; }, index: any) => {
             const date = tag.created_at ? dateFormat(tag.created_at) : null;
             if (!date) {
                 // console.warn("Invalid tag date:", tag.created_at);
