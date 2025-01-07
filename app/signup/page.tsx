@@ -1,20 +1,10 @@
-import { getOnboarding, getSession } from '@/app/supabase-server';
 import Image from 'next/image';
 import { redirect } from 'next/navigation';
-import Logo from '@/components/icons/Logo';
 import SignUpForm from '@/app/signup/SignUpForm';
 
 export default async function SignIn() {
   return redirect('/signin');
 
-  // const session = await getSession();
-
-  // if (session) {
-  //   const hasOnboarded = await getOnboarding(session.user.id);
-  //   console.log('hasOnboarded', hasOnboarded);
-  //   if (!hasOnboarded) return redirect('/onboarding/intro');
-  //   return redirect('/dashboard');
-  // }
 
   return (
     <div className="flex justify-center height-screen-helper">

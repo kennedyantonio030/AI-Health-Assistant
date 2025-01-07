@@ -1,10 +1,7 @@
 import { redirect } from "next/navigation";
-import { getSession, getUserDetails, saveOnboarding } from "../../supabase-server";
-import { GoToButton } from "../intro/GoToButton";
-import NeurosityConnect from "@/components/NeurosityConnect";
+import { getSession } from "../../supabase-server";
 import OuraConnect from "@/components/OuraConnect";
 import { getOuraAccessTokenServer } from "@/app/oura-server";
-import OuraImport from "@/components/ui/OuraImport";
 
 
 

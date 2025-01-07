@@ -56,7 +56,6 @@ export default function Layout({
     return (
         <div className="space-y-4">
             {children}
-            {/* on mobile just at bottom */}
             <Steps className="lg:bottom-0 lg:left-0 lg:right-0 lg:fixed" onEnd={onFinish} />
         </div>
     );

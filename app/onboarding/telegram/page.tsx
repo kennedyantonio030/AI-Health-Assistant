@@ -1,5 +1,5 @@
 import { redirect } from "next/navigation";
-import { getActiveProductsWithPrices, getSession, getSubscription, getUserDetails, saveOnboarding } from "../../supabase-server";
+import { getSession, getSubscription, getUserDetails, saveOnboarding } from "../../supabase-server";
 import { GoToButton } from "../intro/GoToButton";
 import { sendTelegramMessage } from "@/app/telegram-server";
 import TelegramConnect from "@/components/ui/TelegramConnect";

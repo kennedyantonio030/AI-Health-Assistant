@@ -1,6 +1,5 @@
 'use client';
 
-import { useSupabase } from '@/app/supabase-provider';
 import { getURL } from '@/utils/helpers';
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs';
 import { Auth } from '@supabase/auth-ui-react';
