@@ -1,6 +1,5 @@
 import { redirect } from "next/navigation";
-import { getSession, getUserDetails, saveOnboarding } from "../../supabase-server";
-import { GoToButton } from "../intro/GoToButton";
+import { getSession } from "../../supabase-server";
 import NeurosityConnect from "@/components/NeurosityConnect";
 
 

@@ -1,11 +1,5 @@
 import { redirect } from "next/navigation";
-import { getSession, getUserDetails, saveOnboarding } from "../../supabase-server";
-import { GoToButton } from "../intro/GoToButton";
-import NeurosityConnect from "@/components/NeurosityConnect";
-import OuraConnect from "@/components/OuraConnect";
-import { getOuraAccessTokenServer } from "@/app/oura-server";
-import OuraImport from "@/components/ui/OuraImport";
-import AppleHealthConnect from "@/components/AppleHealthConnect";
+import { getSession, getUserDetails, } from "../../supabase-server";
 import { GoalInput } from "@/app/dashboard/GoalInput";
 
 
@@ -17,10 +11,7 @@ export default async function Onboarding() {
     if (!session?.user?.id) {
         return redirect('/signin');
     }
-    const getOuraAccessTokenServerServer = async (code: string, scopes: string[], redirectUri: string) => {
-        'use server'
-        return getOuraAccessTokenServer(code, scopes, redirectUri)
-    }
+
 
     return (
         // center stuff vertically and horizontally
