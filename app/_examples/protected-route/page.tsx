@@ -18,8 +18,6 @@ export default async function ProtectedRoute() {
   } = await supabase.auth.getUser()
 
   if (!user) {
-    // This route can only be accessed by authenticated users.
-    // Unauthenticated users will be redirected to the `/login` route.
     redirect('/login')
   }
 
