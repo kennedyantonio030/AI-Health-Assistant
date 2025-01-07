@@ -7,8 +7,6 @@ import TelegramBot from 'node-telegram-bot-api';
 // export const runtime = 'edge'
 export const maxDuration = 300
 
-// curl -X POST -d '{"userId":"20284713-5cd6-4199-8313-0d883f0711a1","timezone":"America/Los_Angeles","fullName":"Louis","telegramChatId":"5776185278", "phone": "+...", "goal": "I aim to increase my productivity by improving my time management skills and maintaining a healthy work-life balance."}' -H "Content-Type: application/json" http://localhost:3000/api/single-prompts
-
 
 export async function POST(req: Request) {
   const { userId, timezone, fullName, telegramChatId, phone, goal } = await req.json()
@@ -45,7 +43,7 @@ export async function POST(req: Request) {
       return NextResponse.json({ message: "No prompt generated" }, { status: 200 });
     }
 
-    // return NextResponse.json({ message: "Success" }, { status: 200 });
+
 
     const { data: d2, error: e2 } = await supabase.from('chats').insert({
       text: prompt,
@@ -53,10 +51,8 @@ export async function POST(req: Request) {
     });
     console.log("Inserted chat:", d2, "with error:", e2);
 
-    // const hasWhatsapp = await getFeatureFlag(user.id);
     if (phone) {
       console.log("Sending whatsapp message to user:", user);
-      // 1. check when was the last whatsapp message with this user
 
       // 4. send the question
       await sendWhatsAppMessage(phone, prompt);

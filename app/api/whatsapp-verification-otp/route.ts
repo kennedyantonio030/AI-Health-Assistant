@@ -1,4 +1,4 @@
-import { checkWhatsAppVerification, startWhatsAppVerification } from "@/app/whatsapp-server";
+import { checkWhatsAppVerification } from "@/app/whatsapp-server";
 
 export const runtime = 'edge'
 
