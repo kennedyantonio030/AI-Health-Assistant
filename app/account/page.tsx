@@ -1,5 +1,3 @@
-import NeurosityConnect from '@/components/NeurosityConnect';
-import ManageSubscriptionButton from './ManageSubscriptionButton';
 import {
   getSession,
   getUserDetails,
@@ -7,23 +5,17 @@ import {
   getActiveProductsWithPrices,
 } from '@/app/supabase-server';
 import { redirect } from 'next/navigation';
-import OuraConnect from '@/components/OuraConnect';
 import { createOuraWebhookSubscription, deleteOuraWebhookSubscriptionOfType, getOuraAccessToken, getOuraAccessTokenServer, getOuraPersonalInfo, listOuraWebhookSubscriptions, revokeOuraAccessToken } from '../oura-server';
 import WhatsappConnect from '@/components/ui/WhatsappConnect';
-import OuraImport from '@/components/ui/OuraImport';
-import PlanRibbon from '@/components/ui/PlanRibbon';
 import { checkWhatsAppVerification, startWhatsAppVerification } from '../whatsapp-server';
-import OuraDisconnect from '@/components/OuraDisconnect';
-import NeurosityDisconnect from '@/components/NeurosityDisconnect';
-import DailyUsage from './DailyUsage';
 import { kv } from '@vercel/kv';
 import TelegramConnect from '@/components/ui/TelegramConnect';
 import { checkTelegramVerification, sendTelegramMessage, startTelegramVerification } from '../telegram-server';
-import Sub from './Sub';
 import { GoalInput } from '../dashboard/GoalInput';
 import MetriportConnect from '@/components/MetriportConnect';
 import LanguageDropdown from './LanguageSelector';
 import AppleHealthConnect from '@/components/AppleHealthConnect';
+
 export const dynamic = "force-dynamic";
 
 export default async function Account() {

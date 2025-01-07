@@ -17,7 +17,6 @@ export default function LanguageDropdown({ userId }: { userId: string }) {
         { language: 'Hindi', flag: '🇮🇳' },
         { language: 'Russian', flag: '🇷🇺' },
         { language: 'Japanese', flag: '🇯🇵' },
-        { language: 'Korean', flag: '🇰🇷' },
         { language: 'Vietnamese', flag: '🇻🇳' },
         { language: 'Italian', flag: '🇮🇹' },
     ]; // Add more languages as needed

@@ -1,16 +1,7 @@
 'use client'
 import React, { ReactNode } from 'react';
-import {
-    HoverCard,
-    HoverCardContent,
-    HoverCardTrigger,
-} from "@/components/ui/hover-card"
 import { ArrowPathIcon, CheckBadgeIcon, QuestionMarkCircleIcon } from '@heroicons/react/20/solid';
 import { Database } from '@/types_db';
-import { useRouter } from 'next/navigation';
-import { postData } from '@/utils/helpers';
-import { getStripe } from '@/utils/stripe-client';
-import { Loader2 } from 'lucide-react';
 import { Session, User } from '@supabase/supabase-js';
 import ManageSubscriptionButton from '@/app/account/ManageSubscriptionButton';
 
