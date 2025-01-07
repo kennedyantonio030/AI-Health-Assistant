@@ -46,8 +46,6 @@ const SignInForm: FC<Props> = () => {
             provider: 'google',
             options: {
                 redirectTo: baseUrl + '/auth/callback',
-
-                // redirectTo: `${getURL()}/auth/callback`
             }
         })
 
@@ -62,7 +60,6 @@ const SignInForm: FC<Props> = () => {
             provider: 'twitter',
             options: {
                 redirectTo: baseUrl + '/auth/callback',
-                // redirectTo: `${getURL()}/auth/callback` 
             }
         })
 
@@ -74,14 +71,9 @@ const SignInForm: FC<Props> = () => {
 
     return (
         <div className="flex flex-col justify-between max-w-lg p-6 mx-auto w-80">
-            {/* <div className="flex justify-center pb-12">
-                <img src="/logo.png" alt="logo" className="mx-auto w-16 h-16" />
-            </div> */}
             <Toaster />
 
             <div className="flex flex-col">
-
-                {/* <form className="w-full"> */}
 
                 <div className="flex flex-col space-y-2">
 
@@ -132,14 +124,6 @@ const SignInForm: FC<Props> = () => {
                     <div className="border-b w-full" />
                 </div>
 
-                {/* <a
-                    href="/signup"
-                    className="block text-center text-gray-500 hover:underline"
-                >
-                    Don't have an account? Sign up
-                </a> */}
-
-                {/* </form> */}
 
                 <div className="relative my-3">
                     <div className="absolute inset-0 flex items-center">
@@ -161,18 +145,6 @@ const SignInForm: FC<Props> = () => {
                         <Icons.google className="h-4 w-4" />
                     )}{" "}
                 </Button>
-
-                {/* <Button
-                    className="text-black"
-                    variant="outline"
-                    disabled={isLoading} onClick={signInWithTwitter}>
-                    {isLoading ? (
-                        <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
-                    ) : (
-                        <Icons.twitter className="mr-2 h-4 w-4" />
-                    )}{" "}
-                    Twitter
-                </Button> */}
             </div>
         </div>
     )

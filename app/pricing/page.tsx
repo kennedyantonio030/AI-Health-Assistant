@@ -3,7 +3,6 @@ import {
   getSession,
   getSubscription,
   getActiveProductsWithPrices,
-  getUserDetails
 } from '@/app/supabase-server';
 import React from 'react'
 import PricingPlan from './PricingPlan';

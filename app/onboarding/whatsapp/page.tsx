@@ -1,9 +1,5 @@
 import { redirect } from "next/navigation";
-import { getActiveProductsWithPrices, getSession, getSubscription, getUserDetails, saveOnboarding } from "../../supabase-server";
-import { GoToButton } from "../intro/GoToButton";
-import NeurosityConnect from "@/components/NeurosityConnect";
-import OuraConnect from "@/components/OuraConnect";
-import { getOuraAccessTokenServer } from "@/app/oura-server";
+import { getSession, getSubscription, getUserDetails, saveOnboarding } from "../../supabase-server";
 import WhatsappConnect from "@/components/ui/WhatsappConnect";
 import { checkWhatsAppVerification, startWhatsAppVerification } from "@/app/whatsapp-server";
 

@@ -5,7 +5,6 @@ import { Dialog, Transition } from '@headlessui/react';
 const MobileWarning: React.FC = () => {
   const [open, setOpen] = useState(false);
 
-  // Check if user is on mobile device
   useEffect(() => {
     const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent) || window.innerWidth < 768;
     if (isMobile) {

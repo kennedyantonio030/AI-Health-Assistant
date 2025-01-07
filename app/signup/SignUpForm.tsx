@@ -21,7 +21,6 @@ const SignUpForm: FC<Props> = () => {
     const [checkMail, setCheckMail] = useState(false)
     const [isLoading, setIsLoading] = useState(false)
 
-    const router = useRouter()
     const baseUrl = getURL().replace(/\/$/, '')
 
     console.log(baseUrl + '/auth/callback')
@@ -33,8 +32,6 @@ const SignUpForm: FC<Props> = () => {
             email: email,
             password: password,
             options: {
-                // make this redirect to a page that interprets the token so that it signs in automatically
-                // emailRedirectTo: `${getRedirectURL()}/signin`,
                 emailRedirectTo: baseUrl + '/auth/callback',
             }
         })
@@ -60,21 +57,7 @@ const SignUpForm: FC<Props> = () => {
             provider: 'google',
             options: { 
                 redirectTo: baseUrl + '/auth/callback',
-                
-                // redirectTo: `${getURL()}/auth/callback`
             }
-        })
-
-        if (error) {
-            H.consumeError(error)
-            return toast.error(error.message)
-        }
-    }
-
-    const signInWithTwitter = async () => {
-        const { data, error } = await supabase.auth.signInWithOAuth({
-            provider: 'twitter',
-            options: { redirectTo: `${getURL()}/auth/callback` }
         })
 
         if (error) {
@@ -85,9 +68,6 @@ const SignUpForm: FC<Props> = () => {
 
     return (
         <div className="flex flex-col justify-between max-w-lg p-6 mx-auto w-80">
-            {/* <div className="flex justify-center pb-12">
-                <img src="/logo.png" alt="logo" className="mx-auto w-16 h-16" />
-            </div> */}
             <Toaster />
 
             <div className="flex flex-col">
@@ -169,26 +149,6 @@ const SignUpForm: FC<Props> = () => {
                         <Icons.google className="h-4 w-4" />
                     )}{" "}
                 </Button>
-
-                {/* twitter */}
-
-
-                {/* <Button
-                    className="text-black"
-                    variant="outline"
-                    disabled={isLoading} onClick={signInWithTwitter}>
-                    {isLoading ? (
-                        <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
-                    ) : (
-                        <Icons.twitter className="mr-2 h-4 w-4" />
-                    )}{" "}
-                    Twitter
-                </Button> */}
-
-
-                {/* <p className="text-sm text-red-500">
-                    Can only request every 30 seconds
-                </p> */}
 
             </div>
         </div>

@@ -1,9 +1,6 @@
 import { getOnboarding, getSession } from '@/app/supabase-server';
-import AuthUI from './AuthUI';
 import Image from 'next/image';
 import { redirect } from 'next/navigation';
-import Logo from '@/components/icons/Logo';
-import SignUpForm from '@/app/signup/SignUpForm';
 import SignInForm from '@/app/signin/SignInForm';
 
 export default async function SignIn() {
@@ -30,8 +27,6 @@ export default async function SignIn() {
             src="/logo.png" alt="neurosity" width="64" height="64"
           />
         </div>
-        {/* <Login /> */}
-        {/* <AuthUI /> */}
         <SignInForm />
       </div>
     </div>
