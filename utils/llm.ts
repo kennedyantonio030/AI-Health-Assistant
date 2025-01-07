@@ -31,22 +31,7 @@ const processQueue = async () => {
     isRequestInProgress = false;
     processQueue();
 };
-/**
- * 
- * @param message 
- * @param retries 
- * @returns 
- * 
- * @example
-    (async () => {
-        try {
-            const result = await llm("Your message here");
-            console.log(result);
-        } catch (error) {
-            console.error(`Error occurred: ${error.message}`);
-        }
-    })();
- */
+
 export const llm = async (message: string, retries = MAX_RETRIES, model = 'claude-2', max_tokens_to_sample = 500): Promise<string> => {
     return new Promise(async (resolve, reject) => {
         const wrappedRequest = async () => {
