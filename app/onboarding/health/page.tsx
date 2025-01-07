@@ -1,10 +1,6 @@
 import { redirect } from "next/navigation";
-import { getSession, getUserDetails, saveOnboarding } from "../../supabase-server";
-import { GoToButton } from "../intro/GoToButton";
-import NeurosityConnect from "@/components/NeurosityConnect";
-import OuraConnect from "@/components/OuraConnect";
+import { getSession } from "../../supabase-server";
 import { getOuraAccessTokenServer } from "@/app/oura-server";
-import OuraImport from "@/components/ui/OuraImport";
 import AppleHealthConnect from "@/components/AppleHealthConnect";
 import MetriportConnect from "@/components/MetriportConnect";
 
@@ -14,10 +10,6 @@ export default async function Onboarding() {
     const session = await getSession()
     if (!session?.user?.id) {
         return redirect('/signin');
-    }
-    const getOuraAccessTokenServerServer = async (code: string, scopes: string[], redirectUri: string) => {
-        'use server'
-        return getOuraAccessTokenServer(code, scopes, redirectUri)
     }
 
     return (
