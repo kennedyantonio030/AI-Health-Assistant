@@ -15,7 +15,6 @@ import {
 import { Textarea } from "@/components/ui/textarea"
 import { toast } from "@/components/ui/use-toast"
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs"
-import { Loader2 } from "lucide-react";
 
 
 const examples = [

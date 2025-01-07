@@ -4,10 +4,9 @@ import Plot from 'react-plotly.js';
 import { Session } from '@supabase/auth-helpers-nextjs';
 import { ArrowPathIcon } from '@heroicons/react/20/solid';
 import { Button } from '@/components/ui/button';
-import { GetStatesWithFunctionOptions } from '../supabase-server';
 import { LLMInsights } from './LLMInsights';
 import posthog from 'posthog-js';
-import { State, Tag } from '@/utils/extended-types';
+import { State } from '@/utils/extended-types';
 
 interface Props {
     session: Session;
@@ -47,7 +46,7 @@ export const OuraSleepChart = ({ session, getSleeps, getTags }: Props) => {
         return `${monthNames[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
     };
 
-    const sleepScores = states.map((state) => {
+    const sleepScores = states.map((state: { oura: { [x: string]: any; }; }) => {
         // @ts-ignore
         const sleepData = state.oura?.['daily_sleep'][0];
         // @ts-ignore
@@ -64,8 +63,8 @@ export const OuraSleepChart = ({ session, getSleeps, getTags }: Props) => {
 
     // Sleep score data series
     const sleepScoreData = {
-        x: sleepScores.map(data => data!.day),
-        y: sleepScores.map(data => data!.score),
+        x: sleepScores.map((data: any) => data!.day),
+        y: sleepScores.map((data: any) => data!.score),
         type: 'scatter',
         mode: 'lines+markers',
         marker: { color: '#48bb78' },

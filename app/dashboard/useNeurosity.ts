@@ -1,8 +1,6 @@
 
 import { Neurosity } from '@neurosity/sdk';
 import { useState, useEffect } from 'react';
-import { BrainwavesLabel, PowerByBand } from '@neurosity/sdk/dist/esm/types/brainwaves';
-import { Credentials } from '@neurosity/sdk/dist/esm/types/credentials';
 import { Session, createClientComponentClient } from '@supabase/auth-helpers-nextjs';
 import { Database } from '@/types_db';
 import { neurosity } from '@/utils/neurosity-client';
@@ -21,7 +19,7 @@ export function useSyncFocus(session: Session) {
     useEffect(() => {
         if (!isLogged) return
         console.log("listening to focus now");
-        const { unsubscribe } = neurosity.focus().subscribe(async (focus) => {
+        const { unsubscribe } = neurosity.focus().subscribe(async (focus: { probability: any; label: any; }) => {
             console.log("focus", focus);
             const nf = {
                 // created_at: focus.timestamp?.toString(),

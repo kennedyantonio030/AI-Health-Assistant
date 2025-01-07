@@ -1,12 +1,6 @@
 'use client'
 import React, { useEffect, useState } from 'react';
-import Plot from 'react-plotly.js';
-import { Neurosity } from '@neurosity/sdk';
-import { Session } from '@supabase/auth-helpers-nextjs';
-import { ArrowPathIcon } from '@heroicons/react/20/solid';
 import { Button } from '@/components/ui/button';
-import { GetStatesWithFunctionOptions } from '../supabase-server';
-import { Skeleton } from '@/components/ui/skeleton';
 import { useCompletion } from 'ai/react'
 import Markdown from '@/components/ui/Markdown';
 import { Loader2 } from 'lucide-react';

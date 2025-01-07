@@ -12,20 +12,9 @@ import {
   saveOnboarding
 } from '@/app/supabase-server';
 import React from 'react'
-import { NeurosityFocusChart } from './NeurosityFocusChart';
-import { NeurosityBrainwaveChart } from './NeurosityBrainwaveChart';
 import { PosthogMail } from './PosthogMail';
-import TagBox from './TagBox';
 import { redirect } from 'next/navigation';
-import NeurosityStatus from './NeurosityStatus';
-import { OuraSleepChart } from './OuraSleepChart';
-import Chat from './Chat';
-import { CommandDialogDemo } from './Command';
-import { OuraHrvChart } from './OuraHrvChart';
 import SaveTimezone from './SaveTimezone';
-import { GoalInput } from './GoalInput';
-import AppleHealthConnect from '@/components/AppleHealthConnect';
-import MetriportConnect from '@/components/MetriportConnect';
 import Link from 'next/link';
 export const dynamic = "force-dynamic";
 
