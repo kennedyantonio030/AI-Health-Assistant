@@ -1,16 +1,13 @@
 import { syncHealthData } from "@/app/metriport"
 import { Database } from "@/types_db"
 import { createClient } from "@supabase/supabase-js"
-import { NextRequest } from "next/server"
 
 export const runtime = 'edge'
-// export const maxDuration = 300
 
 export async function POST(req: Request) {
   const body = await req.json()
   const webhookKey = process.env.METRIPORT_WEBHOOK_KEY
 
-  // Verify the x-webhook-key header
   if (req.headers.get('x-webhook-key') !== webhookKey) {
     return new Response(null, {
       status: 401
