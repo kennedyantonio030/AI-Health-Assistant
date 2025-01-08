@@ -1,38 +1,23 @@
 import Link from 'next/link';
 import { createServerSupabaseClient } from '@/app/supabase-server';
-import Logo from '@/components/icons/Logo';
 import SignOutButton from './SignOutButton';
 import Image from 'next/image';
 import s from './Navbar.module.css';
-import GitHub from '@/components/icons/GitHub';
 import Discord from '@/components/icons/Discord';
-import { useState } from 'react';
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuSeparator,
-  DropdownMenuShortcut,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import {
-  Cloud,
   CreditCard,
-  Github,
-  Keyboard,
   LayoutDashboard,
-  LifeBuoy,
   LogOut,
-  Mail,
   Menu,
-  MessageSquare,
-  Plus,
-  PlusCircle,
-  Settings,
   User,
-  UserPlus,
-  Users,
 } from "lucide-react"
 
 export default async function Navbar() {

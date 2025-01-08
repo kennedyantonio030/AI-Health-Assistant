@@ -1,19 +1,9 @@
 'use client'
 import React, { ReactNode } from 'react';
-import {
-  HoverCard,
-  HoverCardContent,
-  HoverCardTrigger,
-} from "@/components/ui/hover-card"
-import { ArrowPathIcon, CheckBadgeIcon, QuestionMarkCircleIcon } from '@heroicons/react/20/solid';
 import { Database } from '@/types_db';
 import { useRouter } from 'next/navigation';
-import { postData } from '@/utils/helpers';
-import { getStripe } from '@/utils/stripe-client';
 import { Loader2 } from 'lucide-react';
 import { Session, User } from '@supabase/supabase-js';
-import ManageSubscriptionButton from '@/app/account/ManageSubscriptionButton';
-import posthog from 'posthog-js'
 import { usePostHog } from 'posthog-js/react'
 
 type Subscription = Database['public']['Tables']['subscriptions']['Row'];
@@ -37,22 +27,22 @@ const PlanRibbon: React.FC<RibbonProps> = ({ session, price, subscription, displ
   const handleClick = async () => {
     setBiohackerLoading(true);
 
-    // if (subscription) {
-    //   return router.push('/account');
-    // }
-    // try {
-    //   const { sessionId } = await postData({
-    //     url: '/api/create-checkout-session',
-    //     data: { price: price! },
-    //   });
+    if (subscription) {
+      return router.push('/account');
+    }
+    try {
+      const { sessionId } = await postData({
+        url: '/api/create-checkout-session',
+        data: { price: price! },
+      });
 
-    //   const stripe = await getStripe();
-    //   stripe?.redirectToCheckout({ sessionId });
-    // } catch (error) {
-    //   return alert((error as Error)?.message);
-    // } finally {
-    //   setBiohackerLoading(false);
-    // }
+      const stripe = await getStripe();
+      stripe?.redirectToCheckout({ sessionId });
+    } catch (error) {
+      return alert((error as Error)?.message);
+    } finally {
+      setBiohackerLoading(false);
+    }
 
 
     const url = 'https://cal.com/louis030195/beta';
