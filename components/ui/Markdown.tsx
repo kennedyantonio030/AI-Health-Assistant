@@ -28,10 +28,8 @@ const Markdown = ({ children, className }: { children: string, className?: strin
 
   const MarkdownComponents: object = {
     a: ({ node, ...props }) => {
-      // if content regex that match ^[number]
       if (props?.children?.[0]?.match(/\^[0-9]/)) {
         props.children[0] = props.children[0].replace(/\^/, '')
-        // add [ ] around the number
         props.children[0] = props.children[0].replace(/([0-9]+)/, '[$1]')
         return (
           <sup>
@@ -39,7 +37,6 @@ const Markdown = ({ children, className }: { children: string, className?: strin
               {...props}
               target="_blank"
               rel="noopener noreferrer"
-              // uplifted from
               className="light selection:bg-super ml-1 inline font-mono text-xs font-bold uppercase leading-none tracking-widest text-zinc-500 selection:bg-opacity-70 selection:text-white dark:selection:bg-opacity-50"
             />
           </sup>
@@ -50,7 +47,6 @@ const Markdown = ({ children, className }: { children: string, className?: strin
             {...props}
             target="_blank"
             rel="noopener noreferrer"
-            // underline links
             className="underline"
           />
         )

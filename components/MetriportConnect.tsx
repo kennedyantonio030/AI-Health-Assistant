@@ -1,6 +1,5 @@
 'use client'
 import React, { useEffect, useState } from 'react';
-import { MetriportDevicesApi, MetriportMedicalApi } from "@metriport/api-sdk";
 import { Button } from './ui/button';
 
 const MetriportConnect = ({ userId }: { userId: string }) => {

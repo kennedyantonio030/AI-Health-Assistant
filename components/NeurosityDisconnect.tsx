@@ -1,10 +1,7 @@
 'use client'
-import Image from 'next/image';
 import React, { useState, useEffect } from 'react';
 import { Button } from './ui/button';
-import { getURL } from '@/utils/helpers';
 import toast, { Toaster } from 'react-hot-toast';
-import Link from 'next/link';
 import { useNeurosityToken, useOuraToken } from './useTokens';
 import { Session } from '@supabase/supabase-js';
 import { Neurosity } from '@neurosity/sdk';

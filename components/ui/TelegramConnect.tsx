@@ -7,9 +7,6 @@ import { Check, Loader2, Save, Send, TwitterIcon } from 'lucide-react';
 import { Input } from './input';
 import toast, { Toaster } from 'react-hot-toast';
 import { Database } from '@/types_db';
-import { VerificationData, VerificationResponse } from '@/app/whatsapp-server';
-import OtpInput from 'react-otp-input';
-import PhoneInput from 'react-phone-number-input';
 
 import 'react-phone-number-input/style.css';
 import ShimmerButton from '../magicui/shimmer-button';
