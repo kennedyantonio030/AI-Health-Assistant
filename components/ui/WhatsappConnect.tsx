@@ -46,7 +46,6 @@ export default function WhatsappConnect({ session, subscription, userDetails, st
         const pastedData = e.clipboardData.getData('text/plain');
         const regex = /^\d{6}$/;
 
-        // remove all non-numeric characters from pasted data
         const pastedDataNumeric = pastedData.replace(/\D/g, '').split('').slice(0, 6).join('')
         console.log(pastedDataNumeric);
         if (regex.test(pastedDataNumeric)) {
@@ -69,18 +68,6 @@ export default function WhatsappConnect({ session, subscription, userDetails, st
                     }).eq('id', session.user?.id);
 
                     toast.success('WhatsApp connected successfully!', { id });
-                    // fetch /api/phone-verified
-                    const welcomeMessage = await fetch('/api/phone-verified', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json'
-                        },
-                        body: JSON.stringify({
-                            user_id: session.user?.id,
-                            phone: phoneNumber,
-                            full_name: userDetails?.full_name
-                        })
-                    });
                     toast.success('You should receive a welcome message on WhatsApp shortly.', { id });
                 } catch (error: any) {
                     console.error(error);
@@ -161,11 +148,6 @@ export default function WhatsappConnect({ session, subscription, userDetails, st
                             numInputs={6}
                             inputType='number'
                             renderSeparator={<span> | </span>}
-                            // renderInput={(props) => <input
-                            //     // {...props}
-                            //     className='p-0 m-2 w-[4rem] h-[2rem] text-center border-b-2 border-gray-700 focus:outline-none focus:border-indigo-500'
-
-                            // />}
                             inputStyle={{
                                 width: '2rem',
                             }}
@@ -177,7 +159,6 @@ export default function WhatsappConnect({ session, subscription, userDetails, st
                                 type="tel"
                                 pattern="[0-9]*"
                             />}
-                        // className="mb-4"
                         />
                     </div>
                 )

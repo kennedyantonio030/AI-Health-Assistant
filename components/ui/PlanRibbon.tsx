@@ -3,7 +3,7 @@ import React, { ReactNode } from 'react';
 import { Database } from '@/types_db';
 import { useRouter } from 'next/navigation';
 import { Loader2 } from 'lucide-react';
-import { Session, User } from '@supabase/supabase-js';
+import { Session } from '@supabase/supabase-js';
 import { usePostHog } from 'posthog-js/react'
 
 type Subscription = Database['public']['Tables']['subscriptions']['Row'];
