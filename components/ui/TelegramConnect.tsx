@@ -47,13 +47,11 @@ export default function TelegramConnect({ session, userDetails, sendTelegramMess
     const handleSetTelegramUsername = async (number: string) => {
         const isValidTelegramUsername = /^[a-z0-9_]{5,32}$/i.test(number);
         if (!isValidTelegramUsername) {
-            // Handle invalid username
             toast.error('Invalid Telegram username. Please try again.');
             return
         }
 
         setTelegramUsernameLoading(true);
-        // 1. check if this username is already taken
         const { data, error } = await supabase.from('users').select('id')
             .neq('id', session.user?.id)
             .eq('telegram_username', number).limit(1);
@@ -89,7 +87,6 @@ export default function TelegramConnect({ session, userDetails, sendTelegramMess
             <Toaster />
 
             <h2 className="text-2xl font-bold mb-4 text-black text-center">Connect Telegram</h2>
-            {/* if connected, write it down with a check */}
             {
                 hasChatId && <div className="flex flex-col items-center justify-center">
                     <Check className="h-8 w-8 text-green-500" />
@@ -146,7 +143,7 @@ export default function TelegramConnect({ session, userDetails, sendTelegramMess
             <p className="text-gray-500 mt-4">
                 After messaging the bot, you will receive a welcome message.
             </p>
-            {/* <div className="flex flex-col items-center justify-center">
+            <div className="flex flex-col items-center justify-center">
                     <Button
                         onClick={handleConnect}
                         disabled={loading}
@@ -161,7 +158,7 @@ export default function TelegramConnect({ session, userDetails, sendTelegramMess
                 </div>
                 <p className="text-gray-500 mt-4">
                     You will receive a Telegram message explaining how to use Mediar.
-                </p> */}
+                </p>
         </div>
     );
 }
