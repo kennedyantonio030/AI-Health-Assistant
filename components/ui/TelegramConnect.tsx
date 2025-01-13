@@ -32,7 +32,6 @@ export default function TelegramConnect({ session, userDetails, sendTelegramMess
     const [hasChatId, setHasChatId] = useState('');
 
     useEffect(() => {
-        // check if user has a telegram_chat_id in the db
         supabase.from('users').select('telegram_chat_id').eq('id', session.user?.id).then(({ data, error }) => {
             if (error) {
                 console.error(error);
