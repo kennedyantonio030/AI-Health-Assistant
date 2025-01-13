@@ -15,10 +15,10 @@ interface RibbonProps {
   subscription?: Subscription
   displayText: string;
   session: Session;
-  children?: ReactNode; // Add this line for the children prop
+  children?: ReactNode;
 }
 
-const PlanRibbon: React.FC<RibbonProps> = ({ session, price, subscription, displayText, children }) => {
+const PlanRibbon: React.FC<RibbonProps> = ({ price, subscription, displayText, children }) => {
   const [biohackerLoading, setBiohackerLoading] = React.useState(false);
   const router = useRouter();
   const posthog = usePostHog()
