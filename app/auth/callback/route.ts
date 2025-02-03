@@ -13,7 +13,6 @@ export async function GET(request: NextRequest) {
   const code = requestUrl.searchParams.get('code')
 
   console.log('yo', requestUrl.origin)
-  // remove trailing slash
   const nextUrl = getURL().replace(/\/$/, '')
   if (code) {
     const supabase = createRouteHandlerClient<Database>({ cookies })
@@ -31,6 +30,5 @@ export async function GET(request: NextRequest) {
     if (!data || data?.length === 0) return NextResponse.redirect(`${nextUrl}/onboarding/intro`)
   }
 
-  // URL to redirect to after sign in process completes
   return NextResponse.redirect(`${nextUrl}/dashboard`)
 }

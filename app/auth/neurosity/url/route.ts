@@ -19,7 +19,7 @@ export async function POST(request: NextRequest) {
                     "/account"
             ),
             responseType: "token",
-            state: Math.random().toString().split(".")[1], // A random string is required for security reasons
+            state: Math.random().toString().split(".")[1], 
             scope: [
                 "read:devices-info",
                 "read:devices-status",
@@ -28,7 +28,6 @@ export async function POST(request: NextRequest) {
                 "read:focus",
             ]
         })
-        // .then((url) => NextResponse.redirect(url))
         .then((url) => NextResponse.json({ url: url }))
         .catch((error) => NextResponse.json({ error: error.response.data }, { status: 400 }))
 }
