@@ -316,9 +316,7 @@ ${healthData}`,
       await kv.incr(tagKey);
 
       let tag = body.message.text;
-      // if the intent is answer, we want to add the original question to the tag as well
       if (intent === 'answer') {
-        // get the last prompt
 
         const { data: lastPrompt, error: e4 } = await supabase
           .from('prompts')
